@@ -22,16 +22,16 @@
         <input type="text" th:field="*{value}" placeholder="value"  th:errorclass="field-error"/>
         <span th:if="${#fields.hasErrors('value')}" th:errors="*{value}"  th:errorclass="field-error">Value Error</span>
         <div class="submit">
-            <button type="submit" name="start" th:text="#{startButtonLabel}">Start</button>
+            <button type="submit" name="start" th:text="#{startButtonLabel}"/>
         </div>
 
     </fieldset>
 
 </form>
 
-
-
-
+<form id ="download" action="#" th:action="@{/ui/download}" method="post">
+</form>
+<button form="download" th:text="#{download}"/>
 
 </body>
 </html>

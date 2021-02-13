@@ -7,7 +7,11 @@ import org.springframework.ui.ModelMap;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.*;
 
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
 import javax.validation.Valid;
+import java.io.IOException;
+import java.io.PrintWriter;
 
 @Controller
 @RequestMapping("/ui")
@@ -31,7 +35,16 @@ public String start(@Valid Content content,  BindingResult bindingResult, ModelM
     }
     model.clear();
     System.out.println("Started reached! content: " + content);
-    return "redirect:/ui/";
+    return "redirect:/ui";
+}
+
+@RequestMapping(value = "/download")
+public void json(HttpServletRequest request, HttpServletResponse response) throws IOException {
+    response.setContentType("application/json");
+    response.addHeader("Content-Disposition", "attachment; filename=download.json");
+    String report = "{\"download\": 42}";
+    PrintWriter out = response.getWriter();
+    out.write(report);
 }
 
 @RequestMapping("/throwMe")
