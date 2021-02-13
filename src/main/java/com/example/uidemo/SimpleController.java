@@ -17,37 +17,36 @@ import java.io.PrintWriter;
 @RequestMapping("/ui")
 public class SimpleController {
 
-@Value("${spring.application.name}")
+    @Value("${spring.application.name}")
     private String appName;
 
-@RequestMapping("/")
+    @RequestMapping("/")
     public String homePage(Model model) {
-    model.addAttribute("appName", appName);
-    model.addAttribute("content",  new Content());
-    return "home";
-}
-
-@RequestMapping(value = "/start", params = "start")
-public String start(@Valid Content content,  BindingResult bindingResult, ModelMap model) {
-
-    if (bindingResult.hasErrors()) {
+        model.addAttribute("appName", appName);
+        model.addAttribute("content", new Content());
         return "home";
     }
-    model.clear();
-    System.out.println("Started reached! content: " + content);
-    return "redirect:/ui";
-}
 
-@RequestMapping(value = "/download")
-public void json(HttpServletRequest request, HttpServletResponse response) throws IOException {
-    response.setContentType("application/json");
-    response.addHeader("Content-Disposition", "attachment; filename=download.json");
-    String report = "{\"download\": 42}";
-    PrintWriter out = response.getWriter();
-    out.write(report);
-}
+    @RequestMapping(value = "/start", params = "start")
+    public String start(@Valid Content content, BindingResult bindingResult, ModelMap model) {
+        if (bindingResult.hasErrors()) {
+            return "home";
+        }
+        model.clear();
+        System.out.println("Started reached! content: " + content);
+        return "redirect:/ui/";
+    }
 
-@RequestMapping("/throwMe")
+    @RequestMapping(value = "/download")
+    public void json(HttpServletRequest request, HttpServletResponse response) throws IOException {
+        response.setContentType("application/json");
+        response.addHeader("Content-Disposition", "attachment; filename=download.json");
+        String report = "{\"download\": 42}";
+        PrintWriter out = response.getWriter();
+        out.write(report);
+    }
+
+    @RequestMapping("/throwMe")
     public String throwMe(Model model) {
         model.addAttribute("appName", appName);
         throwException();
