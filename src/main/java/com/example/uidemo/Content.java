@@ -16,7 +16,8 @@ public class Content {
     @NotBlank
     private String key;
 
-    @DateTimeFormat(pattern = "dd/MM/yyyy")
+    @NotNull
+    @DateTimeFormat(pattern = "dd.mm.yyyy")
     private Date date;
 
 
