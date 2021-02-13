@@ -2,9 +2,11 @@ package com.example.uidemo;
 
 
 import org.hibernate.annotations.NotFound;
+import org.springframework.format.annotation.DateTimeFormat;
 
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
+import java.util.Date;
 
 public class Content {
 
@@ -14,12 +16,17 @@ public class Content {
     @NotBlank
     private String key;
 
+    @DateTimeFormat(pattern = "dd/MM/yyyy")
+    private Date date;
+
+
     public Content() {
     }
 
-    public Content(String value, String key) {
+    public Content(@NotBlank String value, @NotBlank String key, Date date) {
         this.value = value;
         this.key = key;
+        this.date = date;
     }
 
     public String getValue() {
@@ -38,11 +45,20 @@ public class Content {
         this.key = key;
     }
 
+    public Date getDate() {
+        return date;
+    }
+
+    public void setDate(Date date) {
+        this.date = date;
+    }
+
     @Override
     public String toString() {
         return "Content{" +
                 "value='" + value + '\'' +
                 ", key='" + key + '\'' +
+                ", date=" + date +
                 '}';
     }
 }
