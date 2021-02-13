@@ -1,0 +1,19 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>appl-person-data-sync</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+</head>
+<body>
+<div class="container">
+    <h1>Error Occurred!</h1>
+    <div>
+        <b>
+            [<span th:text="${status}">status</span>]
+            <span th:text="${error}">error</span>
+        </b>
+        <p th:text="${message}">message</p>
+    </div>
+</div>
+</body>
+</html>

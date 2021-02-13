@@ -1,0 +1,36 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>ui-demo</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link rel="stylesheet" type="text/css" media="all"  th:href="@{../style.css}"/>
+</head>
+<body>
+<h1>Hello!</h1>
+<p th:text="'Welcome to ' + ${appName} + '!'" />
+
+
+<form action="#" th:action="@{/ui/start}" th:object="${content}" method="post">
+
+    <fieldset>
+
+        <legend th:text="#{subtitle}"/>
+
+        <input type="text" th:field="*{key}" placeholder="key" />
+        <span th:if="${#fields.hasErrors('key')}" th:errors="*{key}">Key Error</span>
+        <input type="text" th:field="*{value}" placeholder="value" />
+        <span th:if="${#fields.hasErrors('value')}" th:errors="*{value}">Value Error</span>
+        <div class="submit">
+            <button type="submit" name="start" th:text="#{startButtonLabel}">Start</button>
+        </div>
+
+    </fieldset>
+
+</form>
+
+
+
+
+
+</body>
+</html>
