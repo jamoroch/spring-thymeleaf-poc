@@ -8,6 +8,12 @@ import javax.validation.constraints.NotNull;
 
 public class Content {
 
+    @NotBlank
+    private String value;
+
+    @NotBlank
+    private String key;
+
     public Content() {
     }
 
@@ -31,12 +37,6 @@ public class Content {
     public void setKey(String key) {
         this.key = key;
     }
-
-    @NotBlank
-    private String value;
-
-    @NotBlank
-    private String key;
 
     @Override
     public String toString() {
