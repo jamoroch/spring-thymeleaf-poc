@@ -7,7 +7,7 @@ A content object made of two `String` `key` and `value` is sent to the backend u
 This PoC showcases:
 * Exception handling
 * Html Form with backend validation
-* click button to download sample json
+* Click button to download sample json
 * Use of Resource Bundles
 * How to place and reference css
 * How to include a favicon to avoid the annoying 404 on the web dev tools.
@@ -17,4 +17,3 @@ Start demo at
 
 See exception handling
 `http://localhost:8081/ui/throwMe`
-

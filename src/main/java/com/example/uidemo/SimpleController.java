@@ -38,7 +38,7 @@ public class SimpleController {
     }
 
     @RequestMapping(value = "/download")
-    public void json(HttpServletRequest request, HttpServletResponse response) throws IOException {
+    public void download(HttpServletRequest request, HttpServletResponse response) throws IOException {
         response.setContentType("application/json");
         response.addHeader("Content-Disposition", "attachment; filename=download.json");
         String report = "{\"download\": 42}";
