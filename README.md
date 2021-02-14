@@ -18,3 +18,9 @@ Start demo at
 
 See exception handling
 `http://localhost:8081/ui/throwMe`
+
+## External references
+
+* [Thymeleaf+Spring](https://www.thymeleaf.org/doc/tutorials/3.0/thymeleafspring.html)
+* [Webjar+Spring MVC](https://www.webjars.org/documentation#springmvc)
+* [Bootstrap datepicker Options](https://bootstrap-datepicker.readthedocs.io/en/latest/options.html#)
