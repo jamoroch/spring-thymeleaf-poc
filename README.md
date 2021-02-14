@@ -1,4 +1,5 @@
 # spring-thymeleaf-poc
+![Java CI with Maven](https://github.com/jamoroch/spring-thymeleaf-poc/workflows/Java%20CI%20with%20Maven/badge.svg)
 
 Minimal PoC for Server-rendered frontend using Thymeleaf and it´s Spring integration. 
 ## Essentials
