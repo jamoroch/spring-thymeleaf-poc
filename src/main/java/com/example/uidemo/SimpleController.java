@@ -41,10 +41,11 @@ public class SimpleController {
     @RequestMapping(value = "/download")
     public void download(HttpServletRequest request, HttpServletResponse response) throws IOException {
         response.setContentType("application/json");
-        response.addHeader("Content-Disposition", "attachment; filename=download.json");
-        String report = "{\"download\": 42}";
+        String attachtmentFileName = "sample.json";
+        response.addHeader("Content-Disposition", "attachment; filename="+ attachtmentFileName);
+        String sample = "{\"sample\": 667}";
         PrintWriter out = response.getWriter();
-        out.write(report);
+        out.write(sample);
     }
 
     @RequestMapping("/throwMe")
