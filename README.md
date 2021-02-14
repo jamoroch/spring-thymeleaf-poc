@@ -8,6 +8,8 @@ Minimal PoC for Server-rendered frontend using Thymeleaf and it´s Spring integr
 
  **Demo location:**
 `http://localhost:8081/ui/`
+![screenshort](images/screenshot.png)
+
 ## Details
 A content object made of two `String` `key` and `value` and a `java.util.Date` `date` field is sent to the backend using a html form and *validated* there. The `content.toString` is written to stdin.
 
