@@ -27,9 +27,10 @@ public class SimpleController {
         return "home";
     }
 
-    @RequestMapping(value = "/start", params = "start")
+    @RequestMapping(value = "/start")
     public String start(@Valid Content content, BindingResult bindingResult, ModelMap model) {
         if (bindingResult.hasErrors()) {
+            model.addAttribute("appName", appName);
             return "home";
         }
         model.clear();
