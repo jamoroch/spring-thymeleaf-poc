@@ -18,7 +18,8 @@ This PoC showcases:
 * Use of Resource Bundles
 * How to place and reference css
 * How to include a favicon to avoid the annoying 404 on the web dev tools
-* Use Bootstrap's datepicker and parse the date.
+* Use Bootstrap layout
+* Use of Bootstrap-datepicker
 
 
 See custom error page
