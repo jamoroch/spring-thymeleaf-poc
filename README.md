@@ -5,7 +5,7 @@ Minimal PoC for Server-rendered frontend using Thymeleaf and it´s Spring integr
 A content object made of two `String` `key` and `value` and a `java.util.Date` `date` field is sent to the backend using a html form and *validated* there. The `content.toString` is written to stdin.
 
 This PoC showcases:
-* Exception handling
+* Custom error page
 * Html Form with backend validation
 * Click button to download sample json
 * Use of Resource Bundles
