@@ -37,12 +37,8 @@
     <div class="row">
 
         <form action="#" th:action="@{/ui/start}" th:object="${content}" method="post">
-
-            <fieldset>
-
-
-                <legend th:text="#{example.input_and_form}"/>
-
+            <legend th:text="#{example.input_and_form}"/>
+            <fieldset class="border px-2 py-2">
                     <input class="mt-2" type="text" th:field="*{key}" placeholder="key"/>
                     <span th:if="${#fields.hasErrors('key')}" th:errors="*{key}">Key Error</span>
                     <br/>
