@@ -55,12 +55,12 @@
 
             <button class="mt-2 btn btn-primary" type="submit" name="start" th:text="#{startButtonLabel}"/>
         </form>
+        <hr/>
         <legend class = "my-1"  th:text="#{example.download_button}"/>
         <form id="download" action="#" th:action="@{/ui/download}" method="post">
         </form>
         <button class=" mt2 btn btn-primary" form="download" th:text="#{download}"/>
     </div>
-
 </div>
 </body>
 </html>
